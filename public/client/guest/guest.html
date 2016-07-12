@@ -1,0 +1,11 @@
+<div ng-controller='GuestController'>
+  <h1> Please input your guests' names: </h1>
+  <form name="inputGuestForm">
+    <input type='text' ng-model='name'>
+    {{name}}
+    <input type='submit' ng-click='input(name)'>
+  </form>
+</div>
+
+
+

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html ng-app='seating'>
 <head>
 <link rel="stylesheet" type="text/css" href="styles/style.css" />
 </head>
@@ -8,6 +8,11 @@
 </div>
 <h1> Welcome to the Wedding Seating Chart App! </h1>
 <a href="#/guests">Input Your Guests</a>
+<div ng-view> </div>
 
+ <script src="lib/angular/angular.js"></script>
+ <script src="lib/angular-route/angular-route.js"></script>
+ <script src="guest/inputGuest.js"></script>
+ <script src="app.js"></script>
 </body>
 </html>
