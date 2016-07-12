@@ -17,6 +17,25 @@ angular.module('seating.tables',[])
     });
   };
 
+  $scope.assign = function(table, name){
+    if(!$scope.tables.tableCol[table]){
+      $scope.tables.tableCol[table] = [];
+    }
+    $scope.tables.tableCol[table].push(name);
+    console.log("tableCol ", $scope.tables.tableCol);
+    var ind;
+    $scope.tables.guestlist.forEach(function(obj, index){
+      if(obj.name === name){
+        ind = index;
+      }
+    });
+    console.log("removing this guest ", $scope.tables.guestlist[ind].name);
+    $scope.tables.guestlist.splice(ind,1);
+  };
+  $scope.commitTable = function(){
+
+  };
+
   $scope.getGuests();
 
 

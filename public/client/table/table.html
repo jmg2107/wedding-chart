@@ -12,13 +12,15 @@
     <option ng-repeat='names in tables.guestlist'>{{names.name}}</option>
     </select>
     <br><br>
-    <input type="submit" ng-submit="assign(tableNo, names.name)">
-    {{tableNo}}  {{names.name}}
+    <input type="submit" ng-click="assign(tableNo, names)">
+    {{tableNo}}  {{names}}
   </form>
   <h2>Assigned People</h2>
-  <ul ng-model='tables.numTables'>
-  <li >  Table: </li>
+  <ul ng-model='tables.tableCol'>
+  Table # {{tableNo}}
+  <li ng-repeat='table in tables.tableCol'> {{table}} </li>
   </ul>
+  <button type='button' ng-click='commitTable'>Commit Table</button>
 
 
 </div>
