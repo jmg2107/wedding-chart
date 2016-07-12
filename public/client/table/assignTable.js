@@ -6,6 +6,7 @@ angular.module('seating.tables',[])
     numTables: 0,
     tableCol: {},
     commit: {},
+    parsedList: []
   };
 
   $scope.getGuests = function(){
@@ -45,7 +46,18 @@ angular.module('seating.tables',[])
       });
     }
     console.log("commit tables " , $scope.tables.commit);
+    $scope.sendTable();
 
+  };
+  $scope.sendTable = function(){
+    return $http({
+      method: 'POST',
+      url: '/api/table',
+      data: $scope.tables.commit
+    })
+    .then(function () {
+      console.log("sent completed table");
+    });
   };
 
   $scope.getGuests();
