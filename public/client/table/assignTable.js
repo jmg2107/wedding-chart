@@ -4,7 +4,8 @@ angular.module('seating.tables',[])
   $scope.tables = {
     guestlist: [],
     numTables: 0,
-    tableCol: {}
+    tableCol: {},
+    commit: {},
   };
 
   $scope.getGuests = function(){
@@ -33,6 +34,17 @@ angular.module('seating.tables',[])
     $scope.tables.guestlist.splice(ind,1);
   };
   $scope.commitTable = function(){
+    //{tableId:1, name:"Jennica Goo"}
+    $scope.tables.commit["data"]=[];
+    for (var tableNum in $scope.tables.tableCol){
+      $scope.tables.tableCol[tableNum].forEach(function(person){
+        var obj = {};
+        obj["tableId"] = tableNum;
+        obj["name"] = person;
+        $scope.tables.commit["data"].push(obj);
+      });
+    }
+    console.log("commit tables " , $scope.tables.commit);
 
   };
 

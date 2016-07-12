@@ -24,7 +24,8 @@ app.post('/api/guests/', function(req, res){
     .then(function(user) {
       if (!user) {
         var newGuest = new Guest({
-          name: name
+          name: name,
+          tableId: 0
         });
         newGuest.save()
           .then(function(newUser) {
