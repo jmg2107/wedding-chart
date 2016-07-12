@@ -32,8 +32,8 @@ app.post('/api/guests/', function(req, res){
           });
       } else {
         console.log('Guestname already exists');
-        res.status(200).end();
       }
+      res.status(200).end();
     });
 });
 

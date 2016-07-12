@@ -7,8 +7,8 @@
     {{guests.name}}
   </form>
   <h2>Guest List</h2>
-  <ul>
-  <li > </li>
+  <ul ng-model='name'>
+  <li ng-repeat='name in guests.guestlist'>{{name.name}}</li>
   </ul>
 
 </div>
