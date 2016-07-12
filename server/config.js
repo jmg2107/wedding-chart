@@ -15,7 +15,7 @@
 
   db.knex.schema.hasTable('guests').then(function(exists) {
     if (!exists) {
-      db.knex.schema.createTable('users', function (user) {
+      db.knex.schema.createTable('guests', function (user) {
         user.increments('id').primary();
         user.string('name', 100).unique();
         user.integer('tableId');
