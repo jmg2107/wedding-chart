@@ -3,7 +3,8 @@
   <form name="inputGuestForm">
     <input type='text' ng-model='name'>
     {{name}}
-    <input type='submit' ng-click='input(name)'>
+    <input type='submit' ng-click='input(name)' ng-model='guests'>
+    {{guests.name}}
   </form>
 </div>
 
