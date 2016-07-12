@@ -9,7 +9,7 @@
     Input the Table # to assign:
     <input type='text' ng-model='tableNo' placeholder='Table #'>
     <select ng-model="names">
-    <option ng-repeat='names in tables.guestlist'>{{names.name}}</option>
+    <option ng-repeat='names in tables.parsedList[0]'>{{names}}</option>
     </select>
     <br><br>
     <input type="submit" ng-click="assign(tableNo, names)">
@@ -20,7 +20,7 @@
   Table # {{tableNo}}
   <li ng-repeat='table in tables.tableCol'> {{table}} </li>
   </ul>
-  <button type='button' ng-click='commitTable()'>Commit Table</button>
+  <button type='button' ng-click='commitTable()'>Set Table</button>
 
 
 </div>
