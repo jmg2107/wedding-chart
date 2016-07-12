@@ -3,7 +3,7 @@ angular.module('seating.tables',[])
 .controller('TableController', function($scope, $http, Display){
   $scope.tables = {
     guestlist: [],
-    numTables: 0,
+    numTables: [],
     tableCol: {},
     commit: {},
     parsedList: {}
@@ -14,8 +14,11 @@ angular.module('seating.tables',[])
     .then(function(guestlist){
       $scope.tables.guestlist = guestlist;
       console.log("guests: ", $scope.tables.guestlist);
-      $scope.tables.numTables = Math.ceil($scope.tables.guestlist.length/10);
-      console.log("numTabls is ", $scope.tables.numTables);
+      var num = Math.ceil($scope.tables.guestlist.length/10);
+      for(var i=1; i<= num; i++){
+        $scope.tables.numTables.push(i);
+      }
+
       $scope.parseList();
     });
   };

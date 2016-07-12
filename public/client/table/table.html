@@ -2,18 +2,22 @@
 
   <h1>Assign Tables</h1>
   <ul ng-model='tables.numTables'>
-  <li >{{tables.numTables}} Tables Available</li>
+  <li >{{tables.numTables.length}} Tables Available</li>
   </ul>
 
   <form name="assignTablesForm">
-    Input the Table # to assign:
-    <input type='text' ng-model='tableNo' placeholder='Table #'>
+    Select Table # to assign:
+    <select ng-model="tableNo">
+    <option ng-repeat='tableNo in tables.numTables'>{{tableNo}}</option>
+
+    </select>
+    <br>
+    Select Guest to assign:
     <select ng-model="names">
     <option ng-repeat='names in tables.parsedList[0]'>{{names}}</option>
     </select>
     <br><br>
     <input type="submit" ng-click="assign(tableNo, names)">
-    {{tableNo}}  {{names}}
   </form>
   <h2>Assigned People</h2>
   <ul ng-model='tables.tableCol'>
