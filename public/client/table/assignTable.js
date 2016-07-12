@@ -36,15 +36,10 @@ angular.module('seating.tables',[])
     }
     $scope.tables.tableCol[table].push(name);
     console.log("tableCol ", $scope.tables.tableCol);
-    var ind;
-    $scope.tables.guestlist.forEach(function(obj, index){
-      if(obj.name === name){
-        ind = index;
-      }
-    });
-    console.log("removing this guest ", $scope.tables.guestlist[ind].name);
-    $scope.tables.guestlist.splice(ind,1);
+    var ind = $scope.tables.parsedList[0].indexOf(name);
+    $scope.tables.parsedList[0].splice(ind,1);
   };
+
   $scope.commitTable = function(){
     //{tableId:1, name:"Jennica Goo"}
     $scope.tables.commit["data"]=[];
