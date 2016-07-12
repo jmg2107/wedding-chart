@@ -6,7 +6,7 @@ angular.module('seating.tables',[])
     numTables: 0,
     tableCol: {},
     commit: {},
-    parsedList: []
+    parsedList: {}
   };
 
   $scope.getGuests = function(){
@@ -16,7 +16,18 @@ angular.module('seating.tables',[])
       console.log("guests: ", $scope.tables.guestlist);
       $scope.tables.numTables = Math.ceil($scope.tables.guestlist.length/10);
       console.log("numTabls is ", $scope.tables.numTables);
+      $scope.parseList();
     });
+  };
+
+  $scope.parseList = function(){
+    $scope.tables.guestlist.forEach(function(obj){
+        if(!$scope.tables.parsedList[obj.tableId]){
+          $scope.tables.parsedList[obj.tableId] = [];
+        }
+        $scope.tables.parsedList[obj.tableId].push(obj.name);
+    });
+    console.log("parsedList ", $scope.tables.parsedList);
   };
 
   $scope.assign = function(table, name){

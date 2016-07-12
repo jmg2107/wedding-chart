@@ -1,8 +1,12 @@
 <div ng-controller='TableController'>
 
   <h1>Tables</h1>
-  <ul ng-model='tables.numTables'>
-  <li >{{tables.numTables}} Tables Available</li>
+  <ul ng-model='tables.parsedList'>
+  <li ng-repeat='(key, value) in tables.parsedList'> Table #{{key}}
+    <ul>
+    <li ng-repeat='name in tables.parsedList[key]'>{{name}}</li>
+    </ul>
+  </li>
   </ul>
 
 
