@@ -1,6 +1,6 @@
 angular.module('seating.guests',[])
 
-.controller('GuestController', function($scope, $http){
+.controller('GuestController', function($scope, $http, Display){
   $scope.guests = {
     name: "testname",
     guestlist: []
@@ -17,23 +17,17 @@ angular.module('seating.guests',[])
     })
     .then(function () {
       console.log("created new Guest");
-      $scope.display();
+      $scope.getGuests();
     });
   };
-  $scope.display = function(){
-    return $http({
-      method: 'GET',
-      url: '/api/guests',
-    })
-    .then(function (res) {
-      console.log("res data is ", res);
-      $scope.guests.guestlist = res.data;
-      console.log("guestlist = ", $scope.guests.guestlist);
-      return res.data;
+  $scope.getGuests = function(){
+    Display.display()
+    .then(function(guestlist){
+      $scope.guests.guestlist = guestlist;
+      console.log("guests: ", $scope.guests.guestlist);
     });
   };
 
-  $scope.display();
-
+  $scope.getGuests();
 
 });
