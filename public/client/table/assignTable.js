@@ -57,6 +57,8 @@ angular.module('seating.tables',[])
     })
     .then(function () {
       console.log("sent completed table");
+      $scope.tables.commit = {};
+      $scope.tables.tableCol = {};
     });
   };
 

@@ -13,6 +13,10 @@ var app = angular.module('seating', [
     .when('/tables',{
       templateUrl: 'table/table.html',
       controller: 'TableController'
+    })
+    .when('/view',{
+      templateUrl: 'table/view.html',
+      controller: 'TableController'
     });
 
 });

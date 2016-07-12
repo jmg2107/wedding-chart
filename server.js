@@ -45,5 +45,32 @@ app.get('/api/guests/', function(req, res){
 
 });
 
+app.post('/api/table/', function(req, res){
+  console.log("inputting new table ", req.body.data);
+
+  req.body.data.forEach(function(obj){
+    var name = obj.name;
+    var table = obj.tableId
+    console.log("looking for ", name);
+
+    new Guest({name : name})
+      .fetch()
+      .then(function(guest){
+        if(guest){
+          guest.save({tableId : table}, {patch: true})
+          .then(function(changed){
+            console.log("changed model ", changed);
+          });
+
+        } else {
+          console.log('Guest not found!');
+        }
+
+      });
+  });
+  res.status(200).end();
+
+});
+
 
 module.exports = app;
