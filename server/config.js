@@ -18,7 +18,7 @@
       db.knex.schema.createTable('guests', function (user) {
         user.increments('id').primary();
         user.string('name', 100).unique();
-        user.integer('tableId');
+        //user.integer('tableId');
       }).then(function (table) {
         console.log('Created Table', table);
       });

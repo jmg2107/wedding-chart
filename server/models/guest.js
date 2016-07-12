@@ -1,6 +1,6 @@
 var db = require('../config');
 
-var User = db.Model.extend({
+var Guest = db.Model.extend({
   tableName: 'guests',
   initialize: function(){
     name: "Jennica Goo"
@@ -9,3 +9,4 @@ var User = db.Model.extend({
 
 });
 
+module.exports = Guest;

@@ -6,11 +6,12 @@ angular.module('seating.guests',[])
   };
   $scope.input = function(name){
     $scope.guests.name = name;
-  }
+    $scope.send();
+  };
   $scope.send = function(){
      return $http({
       method: 'POST',
-      url: '/api/users',
+      url: '/api/guests',
       data: $scope.guests
     })
     .then(function () {
@@ -20,12 +21,13 @@ angular.module('seating.guests',[])
   $scope.display = function(){
     return $http({
       method: 'GET',
-      url: '/api/users',
+      url: '/api/guests',
     })
     .then(function (res) {
-      console.log("res data is ", res.data);
+      console.log("res data is ", res);
       return res;
     });
   };
+
 
 });
