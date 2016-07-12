@@ -1,6 +1,6 @@
-angular.module('seating.tables',[])
+angular.module('seating.tables',['ngRoute'])
 
-.controller('TableController', function($scope, $http, Display){
+.controller('TableController', function($scope, $http, $route, Display){
   $scope.tables = {
     guestlist: [],
     numTables: [],
@@ -68,9 +68,16 @@ angular.module('seating.tables',[])
       console.log("sent completed table");
       $scope.tables.commit = {};
       $scope.tables.tableCol = {};
+      $route.reload();
+
     });
   };
 
+  $scope.reassign = function(name){
+    console.log("removing this name ", name);
+    $scope.assign(0, name);
+    $scope.commitTable();
+  };
   $scope.getGuests();
 
 

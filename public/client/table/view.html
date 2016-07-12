@@ -1,10 +1,11 @@
 <div ng-controller='TableController'>
 
   <h1>Tables</h1>
+  Please click name to remove from table and reassign
   <ul ng-model='tables.parsedList'>
   <li ng-repeat='(key, value) in tables.parsedList'> Table #{{key}}
     <ul>
-    <li ng-repeat='name in tables.parsedList[key]'>{{name}}</li>
+    <li ng-repeat='name in tables.parsedList[key]' ng-click = 'reassign(name)'>{{name}}</li>
     </ul>
   </li>
   </ul>
