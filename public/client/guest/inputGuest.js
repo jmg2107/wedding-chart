@@ -7,13 +7,13 @@ angular.module('seating.guests',[])
   };
   $scope.input = function(name){
     $scope.guests.name = name;
-    $scope.send();
+    $scope.send($scope.guests);
   };
-  $scope.send = function(){
+  $scope.send = function(data){
      return $http({
       method: 'POST',
       url: '/api/guests',
-      data: $scope.guests
+      data: data
     })
     .then(function () {
       console.log("created new Guest");
@@ -27,6 +27,12 @@ angular.module('seating.guests',[])
       console.log("guests: ", $scope.guests.guestlist);
     });
   };
+  $scope.remove = function(name){
+    var guestDel = {};
+    guestDel['name'] = name;
+    $scope.send(guestDel);
+  };
+
 
   $scope.getGuests();
 

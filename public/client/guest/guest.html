@@ -5,8 +5,9 @@
     <input type='submit' ng-click='input(name)' ng-model='guests'>
   </form>
   <h2>Guest List</h2>
+  Click name to remove guest
   <ul ng-model='name'>
-  <li ng-repeat='name in guests.guestlist'>{{name.name}}</li>
+  <li ng-repeat='name in guests.guestlist' ng-click='remove(name.name)'>{{name.name}}</li>
   </ul>
 
 </div>

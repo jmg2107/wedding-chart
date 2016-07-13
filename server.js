@@ -32,7 +32,10 @@ app.post('/api/guests/', function(req, res){
             Guests.add(newUser);
           });
       } else {
-        console.log('Guestname already exists');
+        user.destroy()
+        .then(function(){
+          console.log("Removed guest");
+        })
       }
       res.status(200).end();
     });
