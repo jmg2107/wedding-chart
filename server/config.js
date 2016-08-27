@@ -1,10 +1,15 @@
   var Bookshelf = require('bookshelf');
   var path = require('path');
 
+  var useHost = '127.0.0.1';
+  if(process.env.PORT){
+    useHost = 'wedding-chart.herokuapp.com';
+  }
+
   var db = Bookshelf.initialize({
     client: 'sqlite3',
     connection: {
-      host: '127.0.0.1',
+      host: useHost,
       user: 'your_database_user',
       password: 'password',
       database: 'seatingdb',
