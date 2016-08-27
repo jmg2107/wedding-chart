@@ -1,5 +1,4 @@
 # Node modules
 node_modules/
 public/client/dist/
-db/shortly.sqlite
 .jshintrc
