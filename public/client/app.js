@@ -2,6 +2,7 @@ var app = angular.module('seating', [
   'seating.display',
   'seating.guests',
   'seating.tables',
+  'seating.home',
   'ngRoute'])
 
 .config(function($routeProvider){
@@ -17,6 +18,15 @@ var app = angular.module('seating', [
     .when('/view',{
       templateUrl: 'table/view.html',
       controller: 'TableController'
+    })
+    .when('/home',{
+      templateUrl: 'home/home.html',
+      controller: 'HomeController'
+    })
+    .otherwise('/home', {
+      templateUrl: 'home/home.html',
+      controller: 'HomeController'
     });
+
 
 });

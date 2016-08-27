@@ -9,6 +9,16 @@ angular.module('seating.tables',['ngRoute'])
     parsedList: {}
   };
 
+  $scope.filterList = function(list){
+    var filtered = {};
+    for(var item in list){
+      if(item !== '0'){
+        filtered[item] = list[item];
+      }
+    }
+    return filtered;
+  };
+
   $scope.getGuests = function(){
     Display.display()
     .then(function(guestlist){

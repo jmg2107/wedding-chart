@@ -1,24 +1,62 @@
 <!DOCTYPE html>
 <html ng-app='seating'>
-<head>
-<link rel="stylesheet" type="text/css" href="styles/style.css" />
-</head>
-<body>
-<div id='app'>
-</div>
-<h1> Welcome to the Wedding Seating Chart App! </h1>
-<div>
-<a href="#/guests">Step1: Input Your Guests</a> &nbsp &nbsp &nbsp
-<a href="#/tables">Step2: Assign Tables</a> &nbsp &nbsp &nbsp
-<a href="#/view">Step3: View Tables</a>
-</div>
-<div ng-view> </div>
 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/style.css" />
+</head>
+
+
+<body>
+
+
+
+ <div id='app' class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+      <div class="cover-container">
+
+        <div class="masthead clearfix">
+          <div class="inner">
+            <h3 class="masthead-brand">The Seating Chart</h3>
+            <nav>
+              <ul class="nav masthead-nav">
+                <li class="active"><a href="#/guests">Guest Input</a></li>
+                <li><a href="#/tables">Assign Tables</a></li>
+                <li><a href="#/view">Table View</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+
+        <br><br><br><br><br><br>
+        <div class="inner cover">
+          <div ng-view> </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+<!-- library sources -->
  <script src="lib/angular/angular.js"></script>
  <script src="lib/angular-route/angular-route.js"></script>
- <script src="display/display.js"></script>
- <script src="guest/inputGuest.js"></script>
- <script src="table/assignTable.js"></script>
- <script src="app.js"></script>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.3.1/js/tether.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="styles/bootstrap.min.js"></script>
+
+ <!--  the bundled app -->
+  <script src="dist/built.js"> </script>
+
 </body>
 </html>

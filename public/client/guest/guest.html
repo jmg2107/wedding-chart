@@ -2,8 +2,10 @@
   <h1> Please input your guests' names: </h1>
   <form name="inputGuestForm">
     <input type='text' ng-model='name'>
-    <input type='submit' ng-click='input(name)' ng-model='guests'>
+    <button type='submit' label="Add Guest" class="input-group-large  btn"
+    ng-click='input(name)' ng-model='guests'>Add Guest</button>
   </form>
+  <br>
   <h2>Guest List</h2>
   Click name to remove guest
   <ul ng-model='name'>

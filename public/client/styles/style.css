@@ -1,148 +1,163 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
 body {
-  margin: 0;
+  height: 100%;
+  background-color: #0099e6;
+}
+body {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+}
+
+
+/*
+ * Header
+ */
+.masthead-brand {
   margin-top: 10px;
-  font-family: arial, sans-serif;
-}
-
-a {
-  color: #0000e8;
-  font-size: 14px;
-  text-decoration: none;
-}
-
-h1 {
-  font-style: italic;
   margin-bottom: 10px;
 }
 
-.navigation {
-  width: 100%;
-  height: 40px;
-  background-color: #eee;
+.masthead-nav > li {
+  display: inline-block;
 }
-
-.navigation ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.navigation li {
-  float: left;
-}
-
-.navigation li a {
-  width: 100px;
-  height: 20px;
-  line-height: 20px;
-  padding: 10px;
-  display: block;
-  text-align: center;
-}
-
-.navigation li a:hover {
-  background-color: #ddd;
-}
-
-.navigation li a.selected {
-  background-color: #ccc;
-}
-
-#container {
-  clear: both;
-  margin-top: 10px;
-}
-
-.link {
-  clear: both;
-  margin-bottom: 5px;
-  padding: 5px;
-  min-height: 50px;
-}
-
-.link:hover {
-  background-color: #efe;
-}
-
-.link img {
-  float: left;
-  margin: 0 5px;
-}
-
-.link .visits {
-  float: right;
-  margin-right: 10px;
+.masthead-nav > li + li {
   margin-left: 20px;
 }
-
-.link .visits .count {
-  font-size: 46px;
-  font-weight: 600;
+.masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #a9a9a9;
+  border-bottom-color: rgba(255,255,255,.25);
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
 }
 
-.link .title {
-  font-weight: 600;
-}
-
-.link .original {
-  color: #aaa;
-  font-size: 12px;
-}
-
-.link .info {
-  margin-left: 55px;
-}
-
-form {
-  margin: 10px;
-}
-
-input {
-  width: 360px;
-  display: block;
-  font-size: 13px;
-  padding: 5px;
-  margin-bottom: 5px;
-}
-
-input[type=url] {
-  display: inline
-}
-
-input[type=url]:focus {
-  outline: none;
+@media (min-width: 768px) {
+  .masthead-brand {
+    float: left;
+  }
+  .masthead-nav {
+    float: right;
+  }
 }
 
 
-.error {
-  border: red solid 4px;
-  padding: 10px;
-  margin: 0 10px;
+/*
+ * Cover
+ */
+
+.cover {
+  padding: 0 20px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
 }
 
-.clean {
-  border: #efe solid 2px;
-  padding: 10px;
-  margin: 0 10px;
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+  color: #999; /* IE8 proofing */
+  color: rgba(255,255,255,.5);
 }
 
-.creator {
-  height: 50px;
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
 }
 
-.creator form {
-  float: left;
-  height: 80px;
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 700px;
+  }
 }
-
-.creator img.spinner {
-  height: 46px;
-  margin-bottom: 5px;
-  padding: 10px;
-  display: none;
-}
-
-.creator .message {
-  clear: both;
-}
-
